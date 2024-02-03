@@ -23,7 +23,9 @@ const UserTable = ({ usersList, deleteUser }) => {
               <td>{el.country}</td>
               <td>{new Date().getFullYear() - el.birthYear || null}</td>
               <td>
-                <button onClick={() => deleteUser(el.id)}>x</button>
+                <button id="delete-btn" onClick={() => deleteUser(el.id)}>
+                  x
+                </button>
               </td>
             </tr>
           ))}

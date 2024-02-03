@@ -20,7 +20,7 @@ const UsersApp = () => {
   const addUser = (user) => {
     setUsersList([
       ...usersList,
-      { ...user, name: user.firstName + "" + user.lastName },
+      { ...user, name: user.firstName + " " + user.lastName },
     ]);
     console.log(usersList);
   };

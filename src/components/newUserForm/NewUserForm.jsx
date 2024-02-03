@@ -28,55 +28,64 @@ const NewUserForm = ({ addUser }) => {
   return (
     <div className="form-container">
       <form onSubmit={onSubmitHandler}>
-        <label>First Name</label>
-        <input
-          type="text"
-          name="firstName"
-          value={newUser.firstName}
-          onChange={onInputChange}
-        />
+        <div>
+          <label>First Name</label>
+          <input
+            type="text"
+            name="firstName"
+            value={newUser.firstName}
+            onChange={onInputChange}
+          />
 
-        <label>Last Name</label>
-        <input
-          type="text"
-          name="lastName"
-          value={newUser.lastName}
-          onChange={onInputChange}
-        />
+          <label>Last Name</label>
+          <input
+            type="text"
+            name="lastName"
+            value={newUser.lastName}
+            onChange={onInputChange}
+          />
+        </div>
 
-        <label>Phone</label>
-        <input
-          type="number"
-          name="phone"
-          value={newUser.phone}
-          onChange={onInputChange}
-        />
+        <div>
+          <label>Phone</label>
+          <input
+            type="number"
+            name="phone"
+            value={newUser.phone}
+            onChange={onInputChange}
+          />
 
-        <label>email</label>
-        <input
-          type="email"
-          name="email"
-          value={newUser.email}
-          onChange={onInputChange}
-        />
+          <label>email</label>
+          <input
+            type="email"
+            name="email"
+            value={newUser.email}
+            onChange={onInputChange}
+          />
+        </div>
 
-        <label>Birth Year</label>
-        <input
-          type="number"
-          name="birthYear"
-          value={newUser.birthYear}
-          onChange={onInputChange}
-        />
+        <div>
+          <label>Birth Year</label>
+          <input
+            type="number"
+            name="birthYear"
+            value={newUser.birthYear}
+            onChange={onInputChange}
+          />
 
-        <label>Country</label>
-        <select value={newUser.country} name="country" onChange={onInputChange}>
-          <option value="USA">USA</option>
-          <option value="Russia">Russia</option>
-          <option value="Kyrgyzstan">Kyrgyzstan</option>
-          <option value="Japan">Japan</option>
-          <option value="France">France</option>
-        </select>
-        {/* <input type="text" name="country" onChange={onInputChange} /> */}
+          <label>Country</label>
+          <select
+            value={newUser.country}
+            name="country"
+            onChange={onInputChange}
+          >
+            <option value="USA">USA</option>
+            <option value="Russia">Russia</option>
+            <option value="Kyrgyzstan">Kyrgyzstan</option>
+            <option value="Japan">Japan</option>
+            <option value="France">France</option>
+          </select>
+        </div>
 
         <button type="submit">ADD</button>
       </form>
