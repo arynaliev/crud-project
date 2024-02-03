@@ -1,0 +1,17 @@
+.userTable-container {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}
+
+.userTable-container table {
+  width: 100%;
+  border: 1px solid grey;
+  padding: 5px;
+  margin: 1rem;
+}
+
+.userTable-container table td {
+  border: 1px solid black;
+  padding: 5px;
+}
