@@ -7,16 +7,33 @@ export const defaultData = {
   lastName: "",
   phone: "",
   email: "",
-  birthYear: "",
+  birthDate: {
+    birthDay: "",
+    birthMonth: "",
+  },
   country: "",
 };
+
+const monthList = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
 
 const NewUserForm = ({ addUser }) => {
   const [newUser, setNewUser] = useState(defaultData);
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    //  console.log(newUser);
     addUser(newUser);
     setNewUser(defaultData);
   };
@@ -25,20 +42,26 @@ const NewUserForm = ({ addUser }) => {
     setNewUser({ ...newUser, [e.target.name]: e.target.value, id: uuidv4() });
   };
 
+  const getMonth = () => {};
+
   return (
     <div className="form-container">
       <form onSubmit={onSubmitHandler}>
         <div>
           <label>First Name</label>
           <input
+            required
             type="text"
             name="firstName"
             value={newUser.firstName}
             onChange={onInputChange}
           />
+        </div>
 
+        <div>
           <label>Last Name</label>
           <input
+            required
             type="text"
             name="lastName"
             value={newUser.lastName}
@@ -49,14 +72,18 @@ const NewUserForm = ({ addUser }) => {
         <div>
           <label>Phone</label>
           <input
+            required
             type="number"
             name="phone"
             value={newUser.phone}
             onChange={onInputChange}
           />
+        </div>
 
+        <div>
           <label>email</label>
           <input
+            required
             type="email"
             name="email"
             value={newUser.email}
@@ -65,16 +92,20 @@ const NewUserForm = ({ addUser }) => {
         </div>
 
         <div>
-          <label>Birth Year</label>
+          <label>Birth Date</label>
           <input
-            type="number"
+            required
+            type="date"
             name="birthYear"
             value={newUser.birthYear}
             onChange={onInputChange}
           />
+        </div>
 
+        <div>
           <label>Country</label>
           <select
+            required
             value={newUser.country}
             name="country"
             onChange={onInputChange}
@@ -87,7 +118,9 @@ const NewUserForm = ({ addUser }) => {
           </select>
         </div>
 
-        <button type="submit">ADD</button>
+        <button id="addBtn" type="submit">
+          ADD
+        </button>
       </form>
     </div>
   );

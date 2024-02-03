@@ -8,11 +8,20 @@
 .form-container form {
   width: 30%;
   gap: 10px;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
 }
 
-form input,
-button {
+.form-container input,
+button,
+select {
   padding: 5px 0;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+
+.form-container form div {
+  display: flex;
+  flex-direction: column;
 }
