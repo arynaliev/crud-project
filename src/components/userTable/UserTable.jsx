@@ -1,5 +1,6 @@
 import React from "react";
 import "./userTable.style.css";
+import { getDate, getMonth } from "../../utilities/helper";
 
 const UserTable = ({ usersList, deleteUser }) => {
   return (
@@ -21,7 +22,11 @@ const UserTable = ({ usersList, deleteUser }) => {
               <td>{el.phone}</td>
               <td>{el.email}</td>
               <td>{el.country}</td>
-              <td>{new Date().getFullYear() - el.birthYear || null}</td>
+              <td>
+                {el.birthDate
+                  ? `${getMonth(el.birthDate)} ${getDate(el.birthDate)}`
+                  : null}
+              </td>
               <td>
                 <button id="delete-btn" onClick={() => deleteUser(el.id)}>
                   x

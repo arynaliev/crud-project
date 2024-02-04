@@ -7,27 +7,9 @@ export const defaultData = {
   lastName: "",
   phone: "",
   email: "",
-  birthDate: {
-    birthDay: "",
-    birthMonth: "",
-  },
+  birthDate: "",
   country: "",
 };
-
-const monthList = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
 
 const NewUserForm = ({ addUser }) => {
   const [newUser, setNewUser] = useState(defaultData);
@@ -42,13 +24,11 @@ const NewUserForm = ({ addUser }) => {
     setNewUser({ ...newUser, [e.target.name]: e.target.value, id: uuidv4() });
   };
 
-  const getMonth = () => {};
-
   return (
     <div className="form-container">
       <form onSubmit={onSubmitHandler}>
         <div>
-          <label>First Name</label>
+          <label htmlFor="firstName">First Name</label>
           <input
             required
             type="text"
@@ -59,7 +39,7 @@ const NewUserForm = ({ addUser }) => {
         </div>
 
         <div>
-          <label>Last Name</label>
+          <label htmlFor="lastName">Last Name</label>
           <input
             required
             type="text"
@@ -70,7 +50,7 @@ const NewUserForm = ({ addUser }) => {
         </div>
 
         <div>
-          <label>Phone</label>
+          <label htmlFor="phone">Phone</label>
           <input
             required
             type="number"
@@ -81,7 +61,7 @@ const NewUserForm = ({ addUser }) => {
         </div>
 
         <div>
-          <label>email</label>
+          <label htmlFor="email">email</label>
           <input
             required
             type="email"
@@ -92,18 +72,18 @@ const NewUserForm = ({ addUser }) => {
         </div>
 
         <div>
-          <label>Birth Date</label>
+          <label htmlFor="birthDate">Birth Date</label>
           <input
             required
             type="date"
-            name="birthYear"
-            value={newUser.birthYear}
+            name="birthDate"
+            value={newUser.birthDate}
             onChange={onInputChange}
           />
         </div>
 
         <div>
-          <label>Country</label>
+          <label htmlFor="country">Country</label>
           <select
             required
             value={newUser.country}
